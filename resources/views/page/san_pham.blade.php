@@ -127,7 +127,7 @@ BKSFCS-Sản Phẩm
 							<div class="beta-sales beta-lists">
 								@foreach($best_sale as $best)
 								<div class="media beta-sales-item">
-									<a class="pull-left" href="product.html"><img src="{{$best->image}}" alt="" style="width: 56px;height: 72px"></a>
+									<a class="pull-left" href="{{route('sanpham',$best->id)}}"><img src="{{$best->image}}" alt="" style="width: 56px;height: 72px"></a>
 									<div class="media-body">
 										{{$best->name}}
 										<span class="beta-sales-price">{{number_format($best->unit_price).' VNĐ'}}</span>
@@ -143,7 +143,7 @@ BKSFCS-Sản Phẩm
 							<div class="beta-sales beta-lists">
 								@foreach($promotion_product as $km)
 								<div class="media beta-sales-item">
-									<a class="pull-left" href="product.html"><img src="{{$km->image}}" alt="" style="width: 56px;height: 72px"></a>
+									<a class="pull-left" href="{{route('sanpham',$km->id)}}"><img src="{{$km->image}}" alt="" style="width: 56px;height: 72px"></a>
 									<div class="media-body">
 										{{$km->name}}
 										<p class="single-item-price">

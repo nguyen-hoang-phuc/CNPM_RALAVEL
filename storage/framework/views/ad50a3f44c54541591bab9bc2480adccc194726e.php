@@ -127,7 +127,7 @@ BKSFCS-Sản Phẩm
 							<div class="beta-sales beta-lists">
 								<?php $__currentLoopData = $best_sale; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $best): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 								<div class="media beta-sales-item">
-									<a class="pull-left" href="product.html"><img src="<?php echo e($best->image); ?>" alt="" style="width: 56px;height: 72px"></a>
+									<a class="pull-left" href="<?php echo e(route('sanpham',$best->id)); ?>"><img src="<?php echo e($best->image); ?>" alt="" style="width: 56px;height: 72px"></a>
 									<div class="media-body">
 										<?php echo e($best->name); ?>
 
@@ -144,7 +144,7 @@ BKSFCS-Sản Phẩm
 							<div class="beta-sales beta-lists">
 								<?php $__currentLoopData = $promotion_product; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $km): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 								<div class="media beta-sales-item">
-									<a class="pull-left" href="product.html"><img src="<?php echo e($km->image); ?>" alt="" style="width: 56px;height: 72px"></a>
+									<a class="pull-left" href="<?php echo e(route('sanpham',$km->id)); ?>"><img src="<?php echo e($km->image); ?>" alt="" style="width: 56px;height: 72px"></a>
 									<div class="media-body">
 										<?php echo e($km->name); ?>
 
