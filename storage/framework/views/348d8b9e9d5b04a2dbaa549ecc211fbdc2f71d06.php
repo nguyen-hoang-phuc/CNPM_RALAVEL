@@ -37,13 +37,13 @@
 					<div class="beta-comp">
 						<?php if(Session::has('cart')): ?>
 						<div class="cart">
-							<div class="beta-select"><i class="fa fa-shopping-cart"></i> Giỏ hàng (<?php if(Session::has('cart')): ?> <?php echo e(Session('cart')->totalQty); ?> <?php else: ?> Trống <?php endif; ?>) <i class="fa fa-chevron-down"></i></div>
+							<div class="beta-select"><i class="fa fa-shopping-cart"></i> Giỏ hàng (<?php if(Session::has('cart')): ?> <?php echo e($totalQty); ?> <?php else: ?> Trống <?php endif; ?>) <i class="fa fa-chevron-down"></i></div>
 							<div class="beta-dropdown cart-body">
 								<?php $__currentLoopData = $product_cart; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $product): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 								<div class="cart-item">
 									<a class="cart-item-delete" href="<?php echo e(route('deletecart',$product['item']['id'])); ?>"><i class="fa fa-times"></i></a>
 									<div class="media">
-										<a class="pull-left" href="#"><img src="<?php echo e($product['item']['image']); ?>" alt="" style="height: 50px;width: 50px"></a>
+										<a class="pull-left" href="<?php echo e(route('sanpham',$product['item']['id'])); ?>"><img src="<?php echo e($product['item']['image']); ?>" alt="" style="height: 50px;width: 50px"></a>
 										<div class="media-body">
 											<span class="cart-item-title"><?php echo e($product['item']['name']); ?></span>
 											<?php if($product['item']['promotion_price']==0): ?>
@@ -57,7 +57,7 @@
 								</div>
 								<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 								<div class="cart-caption">
-									<div class="cart-total text-right">Tổng tiền: <span class="cart-total-value"><?php echo e(number_format(Session('cart')->totalPrice).' VNĐ'); ?></span></div>
+									<div class="cart-total text-right">Tổng tiền: <span class="cart-total-value"><?php echo e(number_format($totalPrice).' VNĐ'); ?></span></div>
 									<div class="clearfix"></div>
 
 									<div class="center">

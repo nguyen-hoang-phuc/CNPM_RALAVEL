@@ -3,22 +3,23 @@
 			<div class="row">
 				<div class="col-sm-3">
 					<div class="widget">
-						<h4 class="widget-title" style="font-size: 1.5em">HOTLINE</h4>
+						<h4 class="widget-title" style="font-size: 1.4em">HOTLINE</h4>
 						<div class="footer-about">
                      		<ul>
                      			<li><i class="fa fa-phone"></i>&ensp;(84-8) 38647256 - 5200</li>
                         		<li><i class="far fa-envelope"></i>&ensp; bksfcs@hcmut.edu.vn</li>
                      		</ul>
                  		</div>
-						<h4 class="widget-title" style="font-size: 1.5em">VĂN PHÒNG</h4>
+						<h4 class="widget-title" style="font-size: 1.4em">VĂN PHÒNG</h4>
 						<ul>
                      		<li><i class="fas fa-map-marker-alt"></i>&ensp; 268 Lý Thường Kiệt,Phường 14,Quận 10, TP.HCM</li>
                      	</ul>
+						<div id="beta-instagram-feed" style="display: none"><div></div></div>
 					</div>
 				</div>
 				<div class="col-sm-3">
 					<div class="widget">
-						<h4 class="widget-title" style="font-size: 1.5em">HỖ TRỢ KHÁCH HÀNG</h4>
+						<h4 class="widget-title" style="font-size: 1.4em">HỖ TRỢ KHÁCH HÀNG</h4>
 						<div>
 							<ul>
                      			<li>
@@ -37,7 +38,7 @@
 				<div class="col-sm-3">
 				
 					<div class="widget">
-						<h4 class="widget-title" style="font-size: 1.5em">PHƯƠNG THỨC THANH TOÁN</h4>
+						<h4 class="widget-title" style="font-size: 1.4em">PHƯƠNG THỨC THANH TOÁN</h4>
 						<div class="payment-method">
                 			<div class="pay-row">
                     			<img class="icon-payment" src="source/image/product/mastercard.svg" width="54"
@@ -58,7 +59,7 @@
 				</div>
 				<div class="col-sm-3">
 					<div class="widget">
-						<h4 class="widget-title" style="font-size: 1.5em">KẾT NỐI VỚI CHÚNG TÔI</h4>
+						<h4 class="widget-title" style="font-size: 1.4em">KẾT NỐI VỚI CHÚNG TÔI</h4>
 						<div class="connect-us">
                            <img class="icon-connect" src="source/image/product/021-facebook.svg" width="30"
                                alt="Facebook">

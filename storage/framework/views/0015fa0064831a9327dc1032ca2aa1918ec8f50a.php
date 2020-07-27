@@ -78,7 +78,7 @@ BKSFCS-Trang Chủ
 										<div class="ribbon-wrapper"><div class="ribbon sale">Sale</div></div>
 
 										<div class="single-item-header">
-											<a href="<?php echo e(route('sanpham',$new->id)); ?>"><img src="<?php echo e($km->image); ?>" alt="" style="width: 270px;height: 320px"></a>
+											<a href="<?php echo e(route('sanpham',$km->id)); ?>"><img src="<?php echo e($km->image); ?>" alt="" style="width: 270px;height: 320px"></a>
 										</div>
 										<div class="single-item-body">
 											<p class="single-item-title"><?php echo e($km->name); ?></p>
@@ -89,7 +89,7 @@ BKSFCS-Trang Chủ
 										</div>
 										<div class="single-item-caption">
 											<a class="add-to-cart pull-left" href="<?php echo e(route('addcart',$km->id)); ?>"><i class="fa fa-shopping-cart"></i></a>
-											<a class="beta-btn primary" href="<?php echo e(route('sanpham',$new->id)); ?>">Chi tiết <i class="fa fa-chevron-right"></i></a>
+											<a class="beta-btn primary" href="<?php echo e(route('sanpham',$km->id)); ?>">Chi tiết <i class="fa fa-chevron-right"></i></a>
 											<div class="clearfix"></div>
 										</div>
 									</div>

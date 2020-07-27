@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jul 21, 2020 at 09:46 AM
+-- Generation Time: Jul 27, 2020 at 03:38 AM
 -- Server version: 10.4.10-MariaDB
 -- PHP Version: 7.3.12
 
@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS `bills` (
   `updated_at` timestamp NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`id`),
   KEY `bills_ibfk_1` (`id_customer`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `bills`
@@ -51,7 +51,9 @@ INSERT INTO `bills` (`id`, `id_customer`, `date_order`, `total`, `payment`, `not
 (11, 11, '2020-07-21', 98000, 'Cash', NULL, '2020-07-21 04:27:14', '2020-07-21 04:27:14'),
 (12, 12, '2020-07-21', 20000, 'ATM', NULL, '2020-07-21 06:24:51', '2020-07-21 06:24:51'),
 (13, 13, '2020-07-21', 18000, 'Cash', NULL, '2020-07-21 07:49:29', '2020-07-21 07:49:29'),
-(14, 14, '2020-07-21', 35000, 'Cash', NULL, '2020-07-21 07:55:45', '2020-07-21 07:55:45');
+(14, 14, '2020-07-21', 35000, 'Cash', NULL, '2020-07-21 07:55:45', '2020-07-21 07:55:45'),
+(15, 15, '2020-07-23', 120000, 'Cash', NULL, '2020-07-23 12:51:52', '2020-07-23 12:51:52'),
+(16, 16, '2020-07-24', 18000, 'ATM', NULL, '2020-07-24 01:39:53', '2020-07-24 01:39:53');
 
 -- --------------------------------------------------------
 
@@ -71,7 +73,7 @@ CREATE TABLE IF NOT EXISTS `bill_detail` (
   PRIMARY KEY (`id`),
   KEY `bill_detail_ibfk_2` (`id_product`),
   KEY `id_bill` (`id_bill`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `bill_detail`
@@ -88,7 +90,9 @@ INSERT INTO `bill_detail` (`id`, `id_bill`, `id_product`, `quantity`, `unit_pric
 (17, 12, 3, 1, 20000, '2020-07-21 06:24:51', '2020-07-21 06:24:51'),
 (18, 13, 4, 1, 18000, '2020-07-21 07:49:29', '2020-07-21 07:49:29'),
 (19, 14, 31, 1, 20000, '2020-07-21 07:55:45', '2020-07-21 07:55:45'),
-(20, 14, 62, 1, 15000, '2020-07-21 07:55:45', '2020-07-21 07:55:45');
+(20, 14, 62, 1, 15000, '2020-07-21 07:55:45', '2020-07-21 07:55:45'),
+(21, 15, 3, 6, 20000, '2020-07-23 12:51:52', '2020-07-23 12:51:52'),
+(22, 16, 4, 1, 18000, '2020-07-24 01:39:53', '2020-07-24 01:39:53');
 
 -- --------------------------------------------------------
 
@@ -108,7 +112,7 @@ CREATE TABLE IF NOT EXISTS `customer` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `customer`
@@ -119,7 +123,9 @@ INSERT INTO `customer` (`id`, `name`, `gender`, `email`, `address`, `phone_numbe
 (11, 'Nguyễn Hoàng Phúc', 'Nam', 'phuc.nguyenblackjack@hcmut.edu.vn', '268 Lý Thường Kiệt, Phường 14, quận 10, TP HCM', '0333339112', NULL, '2020-07-21 04:27:14', '2020-07-21 04:27:14'),
 (12, 'Nguyễn Hoàng Phúc', 'Nam', 'phuc.nguyenblackjack@hcmut.edu.vn', 'KTX khu A ĐHQG TPHCM, phường Linh Trung, quận Thủ Đức', '0333339112', NULL, '2020-07-21 06:24:51', '2020-07-21 06:24:51'),
 (13, 'Nguyễn Hoàng Phúc', 'Nam', 'phuc.nguyenblackjack@hcmut.edu.vn', '268 Lý Thường Kiệt, Phường 14, quận 10, TP HCM', '0333339112', NULL, '2020-07-21 07:49:29', '2020-07-21 07:49:29'),
-(14, 'Nguyễn Hoàng Phúc', 'Nam', 'phuc.nguyenblackjack@hcmut.edu.vn', '268 Lý Thường Kiệt, Phường 14, quận 10, TP HCM', '0333339112', NULL, '2020-07-21 07:55:45', '2020-07-21 07:55:45');
+(14, 'Nguyễn Hoàng Phúc', 'Nam', 'phuc.nguyenblackjack@hcmut.edu.vn', '268 Lý Thường Kiệt, Phường 14, quận 10, TP HCM', '0333339112', NULL, '2020-07-21 07:55:45', '2020-07-21 07:55:45'),
+(15, 'Nguyễn Hoàng Phúc', 'Nam', 'phuc.nguyenblackjack@hcmut.edu.vn', '268 Lý Thường Kiệt, Phường 14, quận 10, TP HCM', '0333339112', NULL, '2020-07-23 12:51:52', '2020-07-23 12:51:52'),
+(16, 'Nguyễn Hoàng Phúc', 'Nam', '1412953@hcmut.edu.vn', '880 Tôn Đức Thắng', '0333339112', NULL, '2020-07-24 01:39:52', '2020-07-24 01:39:52');
 
 -- --------------------------------------------------------
 
@@ -143,7 +149,7 @@ CREATE TABLE IF NOT EXISTS `products` (
   `top` int(11) DEFAULT 0,
   PRIMARY KEY (`id`),
   KEY `products_id_type_foreign` (`id_type`)
-) ENGINE=InnoDB AUTO_INCREMENT=87 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=114 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `products`
@@ -235,7 +241,34 @@ INSERT INTO `products` (`id`, `name`, `id_type`, `description`, `unit_price`, `p
 (83, 'Nước ép ổi', 3, NULL, 20000, 0, 'https://nongsandungha.com/img/nuoc-ep-oi.jpg', 'ly', NULL, NULL, 0, 0),
 (84, 'Kem chua NZ', 7, 'Kem New Zealand hay được mọi người gọi bằng cái tên kem NZ đã trở nên quen thuộc với giới trẻ xứ Hà Thành. Món kem chua độc đáo này có vị tươi mát cùng với vị béo ngậy, ngọt ngào rất dịu, kem NZ để lại ấn tượng sâu sắc trong lòng mỗi du khách với hương vị thanh mát tự nhiên của trái cây nhiệt đới.', 50000, 0, 'https://topchuan.com/wp-content/uploads/2019/08/Kem-chua-NZ.jpg', 'ly', NULL, NULL, 1, 0),
 (85, 'Kem cuộn', 7, NULL, 30000, 28000, 'https://topchuan.com/wp-content/uploads/2019/08/Kem-cuon.jpg', 'ly', NULL, NULL, 1, 0),
-(86, 'Kem xôi', 7, NULL, 20000, 0, 'https://topchuan.com/wp-content/uploads/2019/08/Kem-xoi-1.jpg', 'ly', NULL, NULL, 1, 0);
+(86, 'Kem xôi', 7, NULL, 20000, 0, 'https://topchuan.com/wp-content/uploads/2019/08/Kem-xoi-1.jpg', 'ly', NULL, NULL, 1, 0),
+(87, 'Cà phê sữa đá', 3, NULL, 20000, 0, 'https://bonjourcoffee.vn/blog/wp-content/uploads/2020/01/Ca-phe-sua-da.jpg', 'ly', NULL, NULL, 0, 1),
+(88, 'Cà phê đen đá', 3, NULL, 15000, 0, 'https://comgasg.com/wp-content/uploads/2019/11/cafe-da-3.jpg', 'ly', NULL, NULL, 0, 1),
+(89, 'Xôi gấc chiên', 8, NULL, 20000, 0, 'https://massageishealthy.com/wp-content/uploads/2018/08/cac-mon-xoi-ngon-cach-nau-xoi-ngon-3.jpg', 'đĩa', NULL, NULL, 1, 0),
+(90, ' Xôi vò', 8, NULL, 20000, 0, 'https://massageishealthy.com/wp-content/uploads/2018/08/cac-mon-xoi-ngon-cach-nau-xoi-ngon-4.jpg', 'đĩa', NULL, NULL, 1, 0),
+(91, 'Xôi đậu xanh nước cốt dừa', 8, NULL, 20000, 0, 'https://cdn.daotaobeptruong.vn/wp-content/uploads/2018/03/xoi-dau-xanh-nuoc-cot-dua.jpg', 'đĩa', NULL, NULL, 1, 0),
+(92, 'Xôi bắp', 8, NULL, 20000, 0, 'https://cdn.tgdd.vn/Files/2019/05/12/1166435/recipe-cover-r23407.jpg', 'đĩa', NULL, NULL, 1, 0),
+(93, 'Xôi dừa', 8, NULL, 20000, 0, 'https://image.cooky.vn/recipe/g4/34206/s640/cooky-recipe-cover-r34206.jpg', 'đĩa', NULL, NULL, 1, 0),
+(94, 'Xôi mặn gói lá', 8, NULL, 20000, 0, 'https://massageishealthy.com/wp-content/uploads/2018/08/cac-mon-xoi-ngon-cach-nau-xoi-ngon-8.jpg', 'đĩa', NULL, NULL, 1, 0),
+(95, 'Gà bó xôi', 8, NULL, 75000, 60000, 'https://massageishealthy.com/wp-content/uploads/2018/08/cac-mon-xoi-ngon-cach-nau-xoi-ngon-9.jpg', 'đĩa', NULL, NULL, 1, 0),
+(96, 'Xôi mặn', 8, NULL, 20000, 0, 'https://massageishealthy.com/wp-content/uploads/2018/08/cac-mon-xoi-ngon-cach-nau-xoi-ngon-10.jpg', 'đĩa', NULL, NULL, 1, 0),
+(97, 'Xôi gà chiên giòn', 8, NULL, 20000, 0, 'https://massageishealthy.com/wp-content/uploads/2018/08/cac-mon-xoi-ngon-cach-nau-xoi-ngon-11.jpg', 'đĩa', NULL, NULL, 1, 0),
+(98, 'Xôi ngũ sắc', 8, NULL, 20000, 0, 'https://massageishealthy.com/wp-content/uploads/2018/08/cac-mon-xoi-ngon-cach-nau-xoi-ngon-12.jpg', 'đĩa', NULL, NULL, 1, 0),
+(99, 'Xôi đậu phộng', 8, NULL, 20000, 0, 'https://massageishealthy.com/wp-content/uploads/2018/08/cac-mon-xoi-ngon-cach-nau-xoi-ngon-13.jpg', 'đĩa', NULL, NULL, 1, 0),
+(100, 'Xôi gà bọc lá sen', 8, NULL, 20000, 0, 'https://massageishealthy.com/wp-content/uploads/2018/08/cac-mon-xoi-ngon-cach-nau-xoi-ngon-15.jpg', 'đĩa', NULL, NULL, 1, 0),
+(101, 'Xôi lá nếp', 8, NULL, 20000, 0, 'https://massageishealthy.com/wp-content/uploads/2018/08/cachnauxoingon-16.png', 'đĩa', NULL, NULL, 1, 0),
+(102, 'Xôi cốm', 8, NULL, 20000, 0, 'https://massageishealthy.com/wp-content/uploads/2018/08/cac-mon-xoi-ngon-cach-nau-xoi-ngon-17.jpg', 'đĩa', NULL, NULL, 1, 0),
+(103, 'Bánh mì kẹp thịt', 9, NULL, 20000, 0, 'https://cdn.huongnghiepaau.com/wp-content/uploads/2019/08/banh-mi-heo-quay-thom-ngon.jpg', 'bánh', NULL, NULL, 0, 1),
+(104, 'Bánh mì nướng Kaya', 9, NULL, 20000, 0, 'http://anhquanbakery.com/uploads/images/banh-mi-nuong-Kaya.jpg', 'bánh', NULL, NULL, 0, 1),
+(105, 'Bánh mì Mitrailette', 9, NULL, 20000, 0, 'http://anhquanbakery.com/uploads/images/banh-mi-Mitraillette.jpg', 'bánh', NULL, NULL, 0, 0),
+(106, 'Bánh mì Medianoche', 9, NULL, 20000, 0, 'http://anhquanbakery.com/uploads/images/Medianoche.jpg', 'bánh', NULL, NULL, 1, 0),
+(107, 'Panino', 9, NULL, 20000, 18000, 'http://anhquanbakery.com/uploads/images/Panino.jpg', 'bánh', NULL, NULL, 1, 0),
+(108, 'Doner Kebab', 9, NULL, 20000, 0, 'http://anhquanbakery.com/uploads/images/Doner%20Kebab.jpg', 'bánh', NULL, NULL, 0, 0),
+(109, 'Bánh mì pate trứng ốp la', 9, NULL, 20000, 0, 'http://coju.vn/uploads/products/2019/03/30/5yplr9ngx0hi41rtupst/large-avatar-20190419161800.jpg', 'bánh', NULL, NULL, 0, 1),
+(110, 'Bánh mì chảo', 9, NULL, 30000, 28000, 'https://cdn.huongnghiepaau.com/wp-content/uploads/2019/01/banh-mi-chao-thom-ngon.jpg', 'đĩa', NULL, NULL, 1, 0),
+(111, 'BÁNH MÌ SANDWICH KẸP TRỨNG', 9, NULL, 25000, 0, 'https://cdn.huongnghiepaau.com/wp-content/uploads/2019/08/banh-mi-sandwich-trung.jpg', 'bánh', NULL, NULL, 0, 0),
+(112, 'Bánh Mì Thổ Nhĩ Kỳ', 9, NULL, 20000, 0, 'https://images.foody.vn/res/g78/773689/prof/s640x400/foody-upload-api-foody-mobile-pierres-kebab-04-jpg-180912151305.jpg', 'bánh', NULL, NULL, 0, 1),
+(113, 'BÁNH MÌ QUE ', 9, NULL, 20000, 0, 'https://cdn.daylambanh.edu.vn/wp-content/uploads/2019/09/banh-mi-que-nho-xinh-600x400.jpg', 'que', NULL, NULL, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -277,7 +310,7 @@ CREATE TABLE IF NOT EXISTS `type_products` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `type_products`
@@ -288,7 +321,9 @@ INSERT INTO `type_products` (`id`, `name`, `description`, `image`, `created_at`,
 (2, 'Bún-Phở', '', 'https://monngonbamien.org/wp-content/uploads/2019/10/cach-nau-bun-bo-hue-mien-nam-de-ban-don-gia-chuan-vi-ngon-nhat.jpg', NULL, NULL),
 (3, 'Nước giải khát', '', 'https://baobibinhminh.net/wp-content/uploads/2019/05/smillign-fizzy-drinks.jpg', NULL, NULL),
 (6, 'Bánh ngọt', '', 'https://media.cooky.vn/recipe/g3/29939/s480x480/recipe29939-prepare-step6-636595848832093614.jpg', NULL, NULL),
-(7, 'Kem', '', 'https://www.kiotviet.vn/wp-content/uploads/2014/07/cach-lam-kem-ky.jpg', NULL, NULL);
+(7, 'Kem', '', 'https://www.kiotviet.vn/wp-content/uploads/2014/07/cach-lam-kem-ky.jpg', NULL, NULL),
+(8, 'Xôi', '', '', NULL, NULL),
+(9, 'Bánh mì', '', '', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -307,14 +342,15 @@ CREATE TABLE IF NOT EXISTS `users` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `users_email_unique` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `full_name`, `email`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(4, 'Nguyễn Hoàng Phúc', 'phuc.nguyenblackjack@hcmut.edu.vn', '$2y$10$BORnrgsW58Ubr0nbHyv2xerQo2EMwwG31PyFmw/ggIdeakIvVgPAu', NULL, '2020-07-21 08:16:42', '2020-07-21 08:16:42');
+(4, 'Nguyễn Hoàng Phúc', 'phuc.nguyenblackjack@hcmut.edu.vn', '$2y$10$BORnrgsW58Ubr0nbHyv2xerQo2EMwwG31PyFmw/ggIdeakIvVgPAu', NULL, '2020-07-21 08:16:42', '2020-07-21 08:16:42'),
+(5, 'Nguyễn Hoàng Phúc', '1412953@hcmut.edu.vn', '$2y$10$gQ3gvvyl35VP4mZK2HyoQemK0rqJakUUyFECI8qvj3.qgnsloT/qq', NULL, '2020-07-24 01:42:07', '2020-07-24 01:42:07');
 
 --
 -- Constraints for dumped tables

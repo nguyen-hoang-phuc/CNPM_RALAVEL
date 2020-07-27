@@ -37,13 +37,13 @@
 					<div class="beta-comp">
 						@if(Session::has('cart'))
 						<div class="cart">
-							<div class="beta-select"><i class="fa fa-shopping-cart"></i> Giỏ hàng (@if(Session::has('cart')) {{Session('cart')->totalQty}} @else Trống @endif) <i class="fa fa-chevron-down"></i></div>
+							<div class="beta-select"><i class="fa fa-shopping-cart"></i> Giỏ hàng (@if(Session::has('cart')) {{$totalQty}} @else Trống @endif) <i class="fa fa-chevron-down"></i></div>
 							<div class="beta-dropdown cart-body">
 								@foreach($product_cart as $product)
 								<div class="cart-item">
 									<a class="cart-item-delete" href="{{route('deletecart',$product['item']['id'])}}"><i class="fa fa-times"></i></a>
 									<div class="media">
-										<a class="pull-left" href="#"><img src="{{$product['item']['image']}}" alt="" style="height: 50px;width: 50px"></a>
+										<a class="pull-left" href="{{route('sanpham',$product['item']['id'])}}"><img src="{{$product['item']['image']}}" alt="" style="height: 50px;width: 50px"></a>
 										<div class="media-body">
 											<span class="cart-item-title">{{$product['item']['name']}}</span>
 											@if($product['item']['promotion_price']==0)
@@ -57,7 +57,7 @@
 								</div>
 								@endforeach
 								<div class="cart-caption">
-									<div class="cart-total text-right">Tổng tiền: <span class="cart-total-value">{{number_format(Session('cart')->totalPrice).' VNĐ'}}</span></div>
+									<div class="cart-total text-right">Tổng tiền: <span class="cart-total-value">{{number_format($totalPrice).' VNĐ'}}</span></div>
 									<div class="clearfix"></div>
 
 									<div class="center">
